@@ -107,7 +107,7 @@ const NavigationBar = () => {
       </Navbar>
       {location.pathname === '/' && (
         <div className="top-image-container position-relative" style={{ overflow: 'hidden' }}>
-          <img src={top} alt="Top Image" className="w-100" style={{ maxHeight: '470px' }} />
+          <img src={top} alt="Top" className="w-100" style={{ maxHeight: '470px' }} />
           <div className="position-absolute text-white text-center w-100" style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}>
             <p className="fs-3 text-info fw-bold">
               <strong className="fw-bold text-primary">Providing Trusted,</strong><br />
