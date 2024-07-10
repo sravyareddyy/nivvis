@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Carousel } from 'react-bootstrap';
-import './style.css'; // Ensure your custom CSS file is imported
+import { Container } from 'react-bootstrap';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import imgTelsydayTrio50 from '../Products/productimages/antihyp/Telsy day trio 50/TELSYDAY TRIO 50_1.jpg';
 import imgTelsydayTrio25 from '../Products/productimages/antihyp/TELSYDAY TRIO 25/TELSYDAY TRIO 25_1.jpg';
 import imgTelsydayAMH from '../Products/productimages/antihyp/TELSY DAY AMH/untitle.png';
-import imgTelsydayAM40 from '../Products/productimages/antihyp/TELSYDAY AM/untitle(3).png';
-import imgTelsyday40 from '../Products/productimages/antihyp/Telsyday40/untitled(2).png';
-import imgRosufameGold10 from '../Products/productimages/antihyp/ROSUFAME GOLD 10/ROSUFAME GOLD 10_1.jpg';
-import imgRosufameCV10 from '../Products/productimages/antihyp/Rosufame cv 10/ROSUFAME CV 10_1.jpg';
+import imgTelsydayAM40 from '../Products/productimages/antihyp/TELSYDAY AM/untitled(3).png';
+import imgTelsyday40 from '../Products/productimages/antihyp/Telsyday40/untitled (2).png';
+import imgRosufameGold10 from '../Products/productimages/antihyp/ROSUFAME_GOLD_10/ROSUFAME GOLD 10_1.jpg';
+import imgRosufameCV10 from '../Products/productimages/antihyp/Rosufame_cv_10/ROSUFAME CV 10_1.jpg';
 import imgCalcinivD3 from '../Products/productimages/Calciniv d3/CALCINIV D3_1.jpg';
 import emcovit from '../Products/productimages/emcovit/EMCOVIT GOLD_1.jpg';
 import spansave from '../Products/productimages/Spansave/SPANSAVE DSR_1.jpg';
-import lab from '../images/products/img3.png';
+import practoglim_m1 from '../Products/productimages/Practoglim_m1/practoglim_m1_1.jpg';
+import practoglim_m2 from '../Products/productimages/Practoglim_m2/practoglim_m2_1.jpg';
+import practoglim_m2f from '../Products/productimages/practoglim_m2_forte/practoglim_m2f_1.jpg';
+import lab from '../images/products/image.jpg';
 import img from '../images/products/img1.jpg';
+import background from '../images/products/img5.jpg'; // New background image
+
 const images = [
   { src: imgTelsydayTrio50, name: 'Telsyday Trio 50' },
   { src: imgTelsydayTrio25, name: 'Telsyday Trio 25' },
@@ -25,52 +31,111 @@ const images = [
   { src: imgCalcinivD3, name: 'Calciniv D3' },
   { src: emcovit, name: 'Emcovit Gold' },
   { src: spansave, name: 'Spansave DSR' },
+  { src: practoglim_m1, name: 'Practoglim M1' },
+  { src: practoglim_m2, name: 'Practoglim M2' },
+  { src: practoglim_m2f, name: 'Practoglim M2 Forte' },
 ];
 
+const responsive = {
+  largeDesktop: {
+    breakpoint: { max: 4000, min: 1200 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  desktop: {
+    breakpoint: { max: 1200, min: 992 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {
+    breakpoint: { max: 992, min: 576 },
+    items: 2,
+    slidesToSlide: 1,
+  },
+  mobile: {
+    breakpoint: { max: 576, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
+
+const CustomLeftArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    style={{
+      position: 'absolute',
+      left: '10px',
+      top: '45%',
+      transform: 'translateY(-50%)',
+      zIndex: 1,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      color: 'white',
+      border: 'none',
+      cursor: 'pointer',
+      padding: '10px',
+      borderRadius: '50%',
+    }}
+  >
+    &#9664;
+  </button>
+);
+
+const CustomRightArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    style={{
+      position: 'absolute',
+      right: '10px',
+      top: '45%',
+      transform: 'translateY(-50%)',
+      zIndex: 1,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      color: 'white',
+      border: 'none',
+      cursor: 'pointer',
+      padding: '10px',
+      borderRadius: '50%',
+    }}
+  >
+    &#9654;
+  </button>
+);
+
 const Home = () => {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
   return (
     <div>
       <Container className="scrollspy-example bg-body-tertiary p-3 rounded-2 mt-5" id="vision">
         <h1>Vision</h1>
-        <div className='d-flex flex-column flex-lg-row align-items-center'>
+        <div className="d-flex flex-column flex-lg-row align-items-center">
           <div className="col-lg-7">
-            <p className='text-dark col-11 fs-5 mt-3'>
+            <p className="text-dark col-11 fs-5 mt-3">
               NIVVIS Pharmaceuticals is committed to fostering a healthier future by providing high-quality medications that empower individuals to manage and overcome illness effectively. Our vision is to be a trusted leader in healthcare, recognized for our dedication to improving health outcomes through innovative and patient-focused solutions.
             </p>
-            <p className='text-dark col-11 fs-5 mt-2'>
+            <p className="text-dark col-11 fs-5 mt-2">
               We prioritize accessibility and affordability, ensuring our medications reach those who need them most without financial strain. By making essential treatments widely available, we aim to bridge healthcare gaps and promote equitable access to healthcare worldwide.
             </p>
-            <p className='text-dark col-11 fs-5 mt-2'>
+            <p className="text-dark col-11 fs-5 mt-2">
               Innovation drives our efforts to develop new therapies and enhance existing treatment. Through rigorous research and development, we strive to address unmet medical needs and pioneer advancements in chronic care management. Our goal is to contribute meaningfully to disease prevention, management, and overall well-being.
             </p>
           </div>
           <div className="col-lg-5 d-flex justify-content-center">
-            <img src={lab} height="425" className="rounded d-block" alt="Lab" />
+            <img src={lab} height="425" width="400" className="rounded d-block" alt="Lab" />
           </div>
         </div>
-        <div className='mt-4'>
-          <p className='text-dark fs-5'>
+        <div className="mt-4">
+          <p className="text-dark fs-5">
             At NIVVIS Pharmaceuticals, ethical principles guide our practices. Our focus remains steadfast on improving patient outcomes, supporting healthcare providers, and making a positive impact on global health.
           </p>
         </div>
       </Container>
       <Container className="scrollspy-example bg-body-tertiary p-3 rounded-2 mt-5" id="services">
         <h1>Our Services</h1>
-        <div className='d-flex flex-column flex-lg-row align-items-center'>
+        <div className="d-flex flex-column flex-lg-row align-items-center">
           <div className="col-lg-7">
-            <p className='text-dark fs-5 mt-2'>
-              Nivvis Labs is steadfast in its commitment to advancing healthcare, with a primary emphasis on cardiovascular, neurological health, and pain management. 
-              Our expansive range of pharmaceutical products is meticulously designed to meet the unique needs of patients across various therapeutic areas. 
-              We take pride in our unwavering dedication to delivering high-quality and innovative medicines, making a significant contribution to the global health landscape.
-              Committed to excellence, we constantly strive to make a positive impact on individuals and communities. Nivvis Labs, through continuous research and development, aims to provide transformative solutions, addressing the evolving challenges in healthcare.
+            <p className="text-dark fs-5 mt-2">
+              Nivvis Labs is steadfast in its commitment to advancing healthcare, with a primary emphasis on cardiovascular, neurological health, and pain management. Our expansive range of pharmaceutical products is meticulously designed to meet the unique needs of patients across various therapeutic areas. We take pride in our unwavering dedication to delivering high-quality and innovative medicines, making a significant contribution to the global health landscape. Committed to excellence, we constantly strive to make a positive impact on individuals and communities. Nivvis Labs, through continuous research and development, aims to provide transformative solutions, addressing the evolving challenges in healthcare.
             </p>
-            <p className='text-dark fs-5 mt-2'>
+            <p className="text-dark fs-5 mt-2">
               Our diverse portfolio reflects our dedication to chronic care and therapeutic advancements, positioning us at the forefront of healthcare innovation for a healthier tomorrow.
             </p>
           </div>
@@ -79,138 +144,72 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <Container className="scrollspy-example bg-body-tertiary p-3 rounded-2 mt-5 position-relative" id="products">
-        <h1>Products</h1>
-        <Carousel
-          activeIndex={index}
-          onSelect={handleSelect}
-          indicators={false}
-          pause={false}
-          interval={2000} // Adjust interval as needed
-          nextIcon={<span className="carousel-control-next-icon" aria-hidden="true" />}
-          prevIcon={<span className="carousel-control-prev-icon" aria-hidden="true" />}
-          nextLabel=""
-          prevLabel=""
-          fade={false}
-          touch={true}
-          className="products-carousel"
-        >
-          {images.map((image, idx) => (
-            <Carousel.Item key={idx}>
-              <div className="d-flex justify-content-center">
-                <div className="card" style={{ maxWidth: '18rem' }}>
-                  <div className="img-wrapper">
-                    <img src={image.src} className="card-img-top" alt={image.name} style={{ maxWidth: '100%', height: 'auto' }} />
-                  </div>
-                  <div className="card-body">
-                    <p className="card-text">{image.name}</p>
-                  </div>
+      <Container className="scrollspy-example p-3 rounded-2 mt-5" id="products" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <h1 style={{ color: 'white' }}>Products</h1>
+        <div style={{ position: 'relative' }}>
+          <Carousel
+            responsive={responsive}
+            ssr
+            infinite
+            keyBoardControl
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-40-px"
+            transitionDuration={500}
+            customLeftArrow={<CustomLeftArrow />}
+            customRightArrow={<CustomRightArrow />}
+          >
+            {images.map((image, imgIndex) => (
+              <div
+                key={imgIndex}
+                className="text-center"
+                style={{
+                  padding: '20px',
+                  margin: '10px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  borderRadius: '10px',
+                }}
+              >
+                <div
+                  style={{
+                    width: '100%',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <img
+                    className="d-block"
+                    src={image.src}
+                    alt={image.name}
+                    style={{
+                      objectFit: 'contain',
+                      height: '120px',
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    backgroundColor: 'white',
+                    width: '70%',
+                    padding: '10px 20px',
+                    marginTop: '0px',
+                    borderRadius: '5px',
+                  }}
+                >
+                  <h5 style={{ color: '#0166B4', margin: '0'}}>{image.name}</h5>
                 </div>
               </div>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+            ))}
+          </Carousel>
+        </div>
       </Container>
-     
       <div className="pb-5 mb-5"></div>
     </div>
   );
 };
 
 export default Home;
-
-
-CSS
-/* styles.css */
-
-@media (min-width: 768px) {
-    .carousel-item {
-      margin-right: 0;
-      flex: 0 0 33.333333%; /* Three items per row */
-      display: block;
-    }
-    .carousel-inner {
-      display: flex;
-    }
-  }
-  
-  .card .img-wrapper {
-    max-width: 100%;
-    height: 13em; /* Default height for card image wrapper */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card img {
-    max-height: 100%;
-  }
-  
-  @media (max-width: 767px) {
-    .carousel-item {
-      width: 100%; /* Full width for each item */
-      display: block;
-    }
-  
-    .carousel-inner {
-      display: block; /* Ensure items stack vertically */
-    }
-  }
-  //products
-  // src/Products.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const Products = () => {
-  const productNames1 = [
-    'TELSYDAY TRIO 50', 'TELSYDAY TRIO 25', 'TELSYDAY CT 40',
-    'TELSYDAY AMH', 'TELSYDAY AM 40', 'TELSYDAY 40',
-    'ROSUFAME GOLD 10', 'ROSUFAME F 10', 'ROSUFAME CV 10',
-    'ROSUFAME 10'
-  ];
-
-  const productNames2 = [
-    { category: 'NEUROPATHIC PAIN', products: ['NIVVI\'S COBASTART XT', 'NIVVI\'S COBASTART P', 'NIVVI\'S COBASTART'] },
-    { category: 'PAIN MANAGEMENT', products: ['GABAZEST NT'] },
-    { category: 'CALCIUM & VITAMIN DEFICIENCY', products: ['CALCINIV D3'] },
-  ];
-
-  return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-lg-6">
-          <div className="p-4 mb-4 border rounded-3 bg-light text-center">
-            <h3>ANTI HYPERTENSION & LIPIDS</h3>
-            {productNames1.map(product => (
-              <p key={product} className="text-center">
-                <Link to={`/product/${encodeURIComponent(product)}`}>{product}</Link>
-              </p>
-            ))}
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <div className="row">
-            {productNames2.map(category => (
-              <div key={category.category} className="col-md-6">
-                <div className="p-3 mb-4 border rounded-3 bg-light text-center">
-                  <h3>{category.category}</h3>
-                  {category.products.map(product => (
-                    <p key={product} className="text-center">
-                      <Link to={`/product/${encodeURIComponent(product)}`}>{product}</Link>
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="pb-5 mb-5"></div>
-    </div>
-  );
-};
-
-export default Products;
-
-  

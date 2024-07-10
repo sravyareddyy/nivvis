@@ -6,15 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Products = () => {
   const productNames1 = [
     'TELSYDAY TRIO 50', 'TELSYDAY TRIO 25', 'TELSYDAY CT 40',
-    'TELSYDAY AMH', 'TELSYDAY AM 40', 'TELSYDAY 40',
+    'TELSYDAY AMH', 'TELSYDAY AM', 'TELSYDAY 40',
     'ROSUFAME GOLD 10', 'ROSUFAME F 10', 'ROSUFAME CV 10',
     'ROSUFAME 10'
   ];
 
   const productNames2 = [
-    { category: 'NEUROPATHIC PAIN', products: ['NIVVI\'S COBASTART XT', 'NIVVI\'S COBASTART P', 'NIVVI\'S COBASTART'] },
+    { category: 'NEUROPATHIC PAIN', products: ['COBASTART','COBASTART XT', 'COBASTART P'] },
     { category: 'PAIN MANAGEMENT', products: ['GABAZEST NT'] },
     { category: 'CALCIUM & VITAMIN DEFICIENCY', products: ['CALCINIV D3'] },
+    { category: 'DIABETES', products: ['PRACTOGLIM M1', 'PRACTOGLIM M2', 'PRACTOGLIM M2 FORTE'] },
+    { category: 'OTHERS', products: ['EMCOVIT', 'SPANSAVE', 'SPANSAVE DSR'] }
   ];
 
   return (
