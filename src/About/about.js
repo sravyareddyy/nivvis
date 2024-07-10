@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone} from 'react-icons/fa';
 import img4 from '../images/products/img4.jpg';
+import nivvis from '../images/products/names.png';
 const About = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -51,7 +52,7 @@ const About = () => {
           <Col lg={7}>
             <h2>About Us</h2>
             <p className='text-dark col-11 fs-5 mt-3'>
-              Nivvis Labs, dedicated to advancing global health, offers high-quality, affordable medications with a focus on chronic care. Our mission encompasses research, development, and transformative solutions.
+            <img src={nivvis} height="20" width="160" className="mb-1" alt="Nivvis" /> dedicated to advancing global health, offers high-quality, affordable medications with a focus on chronic care. Our mission encompasses research, development, and transformative solutions.
               Nivvis Labs is dedicated to enhancing global health through:
               <ul>
                 <li>Holistic healthcare solutions integrating research, development, and innovation.</li>

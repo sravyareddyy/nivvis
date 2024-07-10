@@ -33,14 +33,14 @@ import labb from '../images/products/img6.jpg';
 const images = [
   { src: imgTelsydayTrio50, name: 'Telsyday Trio 50' },
   { src: imgTelsydayTrio25, name: 'Telsyday Trio 25' },
-  { src: imgTelsydayAMH, name: 'Telsy Day AMH' },
+  { src: imgTelsydayAMH, name: 'Telsyday AMH' },
   { src: imgTelsydayAM, name: 'Telsyday AM' },
-  { src:tct40_1,name: 'Telsyday ct 40'},
+  { src:tct40_1,name: 'Telsyday CT 40'},
   { src: imgTelsyday40, name: 'Telsyday 40' },
   { src: imgRosufameGold10, name: 'Rosufame Gold 10' },
   { src: imgRosufameCV10, name: 'Rosufame CV 10' },
   { src:rosu10_1, name:'Rosufame 10'},
-  { src:rosuf10_1, name:'Rosufame f 10'},
+  { src:rosuf10_1, name:'Rosufame F 10'},
   { src:coba_1, name:'Cobastart'},
   { src:coba_p_1, name:'Cobastart P'},
   { src:coba_xt_1, name:'Cobastart XT'},
@@ -175,7 +175,7 @@ const Home = () => {
         <div className="d-flex flex-column flex-lg-row align-items-center">
           <div className="col-lg-7">
             <p className="text-dark fs-5 mt-2">
-              Nivvis Labs is steadfast in its commitment to advancing healthcare, with a primary emphasis on cardiovascular, neurological health, and pain management. Our expansive range of pharmaceutical products is meticulously designed to meet the unique needs of patients across various therapeutic areas. We take pride in our unwavering dedication to delivering high-quality and innovative medicines, making a significant contribution to the global health landscape. Committed to excellence, we constantly strive to make a positive impact on individuals and communities. Nivvis Labs, through continuous research and development, aims to provide transformative solutions, addressing the evolving challenges in healthcare.
+            <img src={nivvis} height="20" width="160" className="mb-1" alt="Nivvis" /> is steadfast in its commitment to advancing healthcare, with a primary emphasis on cardiovascular, neurological health, and pain management. Our expansive range of pharmaceutical products is meticulously designed to meet the unique needs of patients across various therapeutic areas. We take pride in our unwavering dedication to delivering high-quality and innovative medicines, making a significant contribution to the global health landscape. Committed to excellence, we constantly strive to make a positive impact on individuals and communities. Nivvis Labs, through continuous research and development, aims to provide transformative solutions, addressing the evolving challenges in healthcare.
             </p>
             <p className="text-dark fs-5 mt-2">
               Our diverse portfolio reflects our dedication to chronic care and therapeutic advancements, positioning us at the forefront of healthcare innovation for a healthier tomorrow.
