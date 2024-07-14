@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone} from 'react-icons/fa';
 import img4 from '../images/products/img4.jpg';
 import nivvis from '../images/products/names.png';
+import contact from '../images/products/img8.jpg';
 const About = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -39,12 +40,12 @@ const About = () => {
 
   return (
     <div>
-      {/* Hero Section
-      <Container fluid className="bg-primary text-white text-center py-5">
-        <h1>About Us</h1>
-        <p className="lead">Learn more about our mission and vision.</p>
+      
+      <Container fluid className="bg-primary text-white text-center py-5"style={{ backgroundImage: `url(${contact})`, backgroundSize: 'cover', borderRadius:'10px 10px 10px 10px'}}>
+        <h1 className='text-dark'>About Us</h1>
+        <p className="lead text-dark fs-4">Learn more about our mission and vision.</p>
         <Button variant="light" href="#contact-form">Contact Us</Button>
-      </Container> */}
+      </Container>
 
       {/* About Section */}
       <Container className="scrollspy-example bg-body-tertiary p-3 rounded-2 mt-5 mb-3">
@@ -97,21 +98,21 @@ const About = () => {
           <Col lg={6}>
             <Card className="text-center mb-4">
               <Card.Body>
-                <FaEnvelope size={40} className="mb-3" />
+                <FaEnvelope size={40} className="mb-3 text-info   " />
                 <Card.Title>Email</Card.Title>
                 <Card.Text>nivvislabs2021@gmail.com</Card.Text>
               </Card.Body>
             </Card>
             <Card className="text-center mb-4">
               <Card.Body>
-                <FaMapMarkerAlt size={40} className="mb-3" />
+                <FaMapMarkerAlt size={40} className="mb-3 text-danger" />
                 <Card.Title>Address</Card.Title>
                 <Card.Text>R/o.205, Floor GRD, Sunder Kamala Nagar, Laxmibai Kelkar marg, Shastri gully, Manav Seva Singh, Sion, Mumbai-400022</Card.Text>
               </Card.Body>
             </Card>
             <Card className="text-center">
               <Card.Body>
-                <FaPhone size={40} className="mb-3" />
+                <FaPhone size={40} className="mb-3 text-success" />
                 <Card.Title>Phone</Card.Title>
                 <Card.Text>+91 1234567890</Card.Text>
               </Card.Body>

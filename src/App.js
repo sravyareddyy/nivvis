@@ -7,7 +7,6 @@ import Products from './Products/product';
 import About from './About/about';
 import Footer from './Home/footer';
 import Productdetails from './Products/productdetails';
-
 const App = () => (
   <Router>
     <NavigationBar />

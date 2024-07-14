@@ -44,7 +44,7 @@ const NavigationBar = () => {
         </Link>
       </Navbar.Brand>
       <Navbar
-        className={`p-2 mb-0 ${scrolled ? 'fixed-top bg-white shadow-sm' : 'd-none d-lg-block'}`}
+        className={`p-2 mb-0 ${scrolled ? 'fixed-top bg-white shadow-sm' : ''}`}
         style={{ backgroundColor: scrolled ? '#fff' : '#0166B4', transition: 'background-color 0.3s, box-shadow 0.3s' }}
         expand="lg"
       >
@@ -109,7 +109,7 @@ const NavigationBar = () => {
         <div className="top-image-container position-relative" style={{ overflow: 'hidden' }}>
           <img src={top} alt="Top" className="w-100" style={{ maxHeight: '470px' }} />
           <div className="position-absolute text-white text-center w-100" style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}>
-            <p className="fs-3 text-info fw-bold">
+            <p className="fs-3 text-dark fw-bold">
               <strong className="fw-bold text-primary">Providing Trusted,</strong><br />
               Effective, <br />
               and Secure Therapeutic Care.<br />

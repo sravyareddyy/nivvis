@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Importing images
@@ -157,10 +157,118 @@ const productImages = {
   'SPANSAVE DSR':[span_dsr_1,span_dsr_2,span_dsr_3,span_dsr_4,span_dsr_5]
   // Add other products similarly
 };
-
+const productInfo = {
+  'TELSYDAY TRIO 50': {
+    description: "Telsyday-Trio 50 Tablet ER is a combination of medicines used to treat hypertension (high blood pressure) when a single medication is not effective. It helps in reducing high blood pressure, thus reducing the chances of heart attack and stroke in the future.",
+    uses: "Hypertension (high blood pressure)",
+    // Add other product details
+  },
+  'TELSYDAY TRIO 25': {
+    description: "Telsyday-Trio 25 Tablet ER is a combination of medicines used to treat hypertension (high blood pressure) when a single medication is not effective. It helps to lower high blood pressure thus reduces chances of future heart attack and stroke.",
+    uses: "Hypertension (high blood pressure)",
+    // Add other product details
+  },
+  'TELSYDAY CT 40': {
+    description: "Telsyday-CT 40 Tablet is a combination of two medicines namely Telmisartan and chlorthalidone.It helps to control high blood pressure. Lowering blood pressure helps to reduce your risk of having a heart attack or a stroke in the future.",
+    uses: "Hypertension (high blood pressure)",
+    // Add other product details
+  },
+  'TELSYDAY AMH': {
+    description: "Telsyday AMH Tablet is a combination of medicines used to treat hypertension (high blood pressure) when a single medication is not effective. It helps to lower high blood pressure thus reduces chances of future heart attack and stroke.",
+    uses: "Hypertension (high blood pressure)",
+    // Add other product details
+  },
+  'TELSYDAY AM': {
+    description: "Telsyday AM Tablet contains two medicines, both of which help to control high blood pressure. It lowers the blood pressure by relaxing the blood vessels and making it easier for your heart to pump blood around your body. This will reduce your risk of having a heart attack or a stroke.",
+    uses: "Hypertension (high blood pressure)",
+    // Add other product details
+  },
+  'TELSYDAY 40': {
+    description: "Telsyday 40 Tablet is a medicine used to treat high blood pressure and heart failure. Lowering blood pressure helps to prevent future heart attacks and strokes. This medicine is also effective in preserving kidney function in patients with diabetes.Telsyday 40 Tablet can be prescribed either alone or in combination with other medicines.",
+    uses: "Treatment of Hypertension (high blood pressure),Treatment of Heart failure,Prevention of heart attack and stroke",
+    // Add other product details
+  },
+  'ROSUFAME GOLD 10': {
+    description: "Rosufame Gold 10 Capsule is used for prevention of heart attack, stroke and treatment of peripheral vascular disease. It is a combination of medicines that prevent clot formation in the blood vessels. It also helps to reduce increased cholesterol and triglycerides levels.",
+    uses: "Prevention of Heart attack,Treatment of Peripheral vascular disease,Prevention of Stroke",
+    // Add other product details
+  },
+  'ROSUFAME F 10': {
+    description: "Rosufame F 10 Tablet is a combination of two lipids (fat) lowering medicines. It is used to lower the levels of lipids known as cholesterol and triglycerides in the blood when lifestyle changes (eg. low-fat diet) on their own have failed. This medicine helps to reduce the risk of heart disease.",
+    uses: "Prevention of Heart attack,Treatment of High cholesterol",
+    // Add other product details
+  },
+  'ROSUFAME CV 10': {
+    description: "Rosufame CV 10 Capsule is a combination of two medicines used to prevent heart attack, angina, and stroke. This medicine reduces the bad cholesterol (LDL) and triglycerides (fats) levels. Moreover, it also decreases the formation of harmful blood clots.",
+    uses: "Prevention of Heart attack,Prevention of Angina (heart-related chest pain),Prevention of Stroke)",
+    // Add other product details
+  },
+  'ROSUFAME 10': {
+    description: "Rosufame 10 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and reduce the risk of heart disease. Cholesterol is a fatty substance that builds up in your blood vessels and causes narrowing, which may lead to a heart attack or stroke.",
+    uses: "Treatment of High cholesterol,Prevention of heart attack and stroke",
+    // Add other product details
+  },
+  'COBASTART': {
+    description: "Cobastart Softgel Capsule offers a comprehensive range of health benefits. Methylcobalamin supports nerve health and energy production, while alpha lipoic acid acts as a potent antioxidant, protecting cells from damage. Benfotiamine helps in nerve function and glucose metabolism, complemented by pyridoxine HCL's role in nerve health and mood regulation. Biotin promotes healthy hair, skin, and nails, and folic acid supports cardiovascular health and DNA synthesis. Chromium regulates blood sugar levels, promoting overall metabolic health. ",
+    uses: "Promotes nerve health,Supports cardiovascular functions,Boosts energy levels and strengthens metabolism,Protects the cells from damage",
+    // Add other product details
+  },
+  'COBASTART XT': {
+    description: "Cobastart-XT Tablet designed to kickstart your day with vitality. Formulated with Calcium carbonate, Vitamin D3, Methylcobalamin, L-Methylfolate, and Pyridoxal 5-Phosphate, this tablet offers a comprehensive blend of key ingredients for optimal health. It helps in promoting strong bones and teeth, supporting nerve health and function, helping in red blood cell formation, and contributing to overall energy production.",
+    uses: "Bone health support,Nerve function maintenance,Red blood cell formation,Energy production",
+    // Add other product details
+  },
+  'COBASTART P': {
+    description: "Cobastart P Tablet SR is a prescription medicine used for the treatment of neuropathic pain. It decreases pain by modulating calcium channel activity of the nerve cells. This medicine also protects nerve fibers and heal damaged nerve cells.",
+    uses:"Treatment of Neuropathic pain",
+    // Add other product details
+  },
+  'GABAZEST NT': {
+    description: "Gabazest NT Tablet is a combination medicine used to treat long-lasting (chronic) pain caused by nerve damage due to diabetes, shingles or spinal cord injury. It reduces pain and its associated symptoms such as mood changes, sleep problems, and tiredness. I",
+    uses: "Treatment of Neuropathic pain",
+    // Add other product details
+  },
+  'CALCINIV D3': {
+    description: "Calciniv D3 Tablet offers a simple yet effective solution for maintaining optimal bone health. Formulated with a precise blend of Calcium carbonate and Vitamin D3, it provides essential nutrients necessary for strong bones and teeth. Regular intake of Calciniv D3 supports bone density and strength, reducing the risk of minor bone issues. It helps in calcium absorption, ensuring efficient utilisation by the body for overall skeletal health.",
+    uses: "Maintains optimal bone density,Supports strong bones and healthy teeth,Good for overall skeletal health",
+    // Add other product details
+  },
+  'EMCOVIT': {
+    description: "Emcovit Gold Tablet is a comprehensive health supplement formulated to nourish your body from within. Packed with a potent blend of multivitamins, multiminerals, grape seed extract, and zinc, this tablet offers a myriad of benefits. Key advantages include boosting overall immunity, promoting healthy skin and hair with grape seed extract, supporting optimal energy levels, enhancing cognitive function, and helping in the maintenance of bone health.",
+    uses: "Antioxidant support,Immune system boost,Promotes healthy skin and hair,Energy and cognitive support",
+    // Add other product details
+  },
+  'SPANSAVE': {
+    description: "Spansave Tablet is a medicine that reduces the amount of acid produced in your stomach. It is used for treating acid-related diseases of the stomach and intestine such as heartburn, acid reflux, peptic ulcer disease, and Zollinger-Ellison syndrome. It provides relief from the symptoms and promotes healing.",
+    uses: "Treatment of Heartburn,Treatment of Gastroesophageal reflux disease (Acid reflux),Treatment of Peptic ulcer disease,Treatment of Zollinger-Ellison syndrome",
+    // Add other product details
+  },
+  'SPANSAVE DSR': {
+    description: "Spansave DSR Capsule is a prescription medicine used to treat gastroesophageal reflux disease (Acid reflux), dyspepsia (indigestion), and gastritis. It helps treat the conditions by reducing the amount of acid in the stomach thereby relieving symptoms of acidity such as heartburn, stomach pain, or irritation.  ",
+    uses: "Treatment of Gastroesophageal reflux disease (Acid reflux),Treatment of Indigestion,Treatment of Gastritis",
+    // Add other product details
+  },
+  'PRACTOGLIM M1': {
+    description: " It is a combination of two medicines used to treat type 2 diabetes mellitus in adults. It helps control blood sugar levels in people with diabetes.",
+    uses: "Treatment of Type 2 diabetes mellitus",
+    // Add other product details
+  },
+  'PRACTOGLIM M2': {
+    description: "  It is a combination of two medicines used to treat type 2 diabetes mellitus in adults. It helps control blood sugar levels in people with diabetes.",
+    uses: "Treatment of Type 2 diabetes mellitus",
+    // Add other product details
+  },
+  'PRACTOGLIM M2 FORTE': {
+    description: "",
+    uses: "Treatment of Type 2 diabetes mellitus",
+    // Add other product details
+  },
+  
+};
 function ProductDetails() {
   const { productName } = useParams();
   const images = productImages[productName] || [];
+  const info = productInfo[productName] || {};
   const hasImages = images.length > 0;
   const [showModal, setShowModal] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
@@ -206,7 +314,7 @@ function ProductDetails() {
     width: '40px',
     height: '40px',
     borderRadius: '50%',
-    backgroundColor: 'grey',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
@@ -224,31 +332,46 @@ function ProductDetails() {
       <h1 className="text-center">Product Details</h1>
       <p className="text-center text-dark fs-5 mt-2">{productName}</p>
       {hasImages ? (
-        <div>
-          <Slider {...settings} className="text-center">
-            {images.map((image, index) => (
-              <div key={index} className="text-center">
-                <img
-                  src={image}
-                  alt={`${productName} ${index + 1}`}
-                  style={{ maxWidth: '80%', maxHeight: '300px', margin: '0 auto', cursor: 'pointer' }}
-                  className="img-fluid"
-                  onClick={() => handleImageClick(image)}
-                />
-              </div>
-            ))}
-          </Slider>
-          <Modal show={showModal} onHide={handleCloseModal} centered>
-            <Modal.Body>
-              <img src={currentImage} alt="Product" className="img-fluid" />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleCloseModal}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
+        <Card className="p-4 mb-4 border-0 shadow-sm">
+          <div className="row">
+            <div className="col-md-6 p-4 mb-4  border border-tertiary shadow-sm bg-white">
+              <Slider {...settings}>
+                {images.map((image, index) => (
+                  <div key={index} className="text-center">
+                    <img
+                      src={image}
+                      alt={`${productName} ${index + 1}`}
+                      style={{ maxWidth: '100%', maxHeight: '300px', cursor: 'pointer' }}
+                      className="img-fluid"
+                      onClick={() => handleImageClick(image)}
+                    />
+                  </div>
+                ))}
+              </Slider>
+              <Modal show={showModal} onHide={handleCloseModal} centered>
+                <Modal.Body>
+                  <img src={currentImage} alt="Product" className="img-fluid" />
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleCloseModal}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </div>
+            <div className="col-md-6">
+              <Card.Body>
+                <Card.Title>{productName}</Card.Title>
+                <Card.Text>
+                  <strong>Description:</strong> <div className='fs-6 text-dark'>{info.description}</div>
+                </Card.Text>
+                <Card.Text>
+                  <strong>Uses:</strong><div className='fs-6 text-dark'>{info.uses}</div> 
+                </Card.Text>
+              </Card.Body>
+            </div>
+          </div>
+        </Card>
       ) : (
         <p className="text-center">Images not available</p>
       )}
