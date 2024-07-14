@@ -44,7 +44,7 @@ const NavigationBar = () => {
         </Link>
       </Navbar.Brand>
       <Navbar
-        className={`p-2 mb-0 ${scrolled ? 'fixed-top bg-white shadow-sm' : ''}`}
+        className={`p-2 mb-0 ${scrolled ? 'fixed-top bg-white shadow-sm' : 'd-none d-lg-block'}`}
         style={{ backgroundColor: scrolled ? '#fff' : '#0166B4', transition: 'background-color 0.3s, box-shadow 0.3s' }}
         expand="lg"
       >

@@ -41,7 +41,7 @@ const About = () => {
   return (
     <div>
       
-      <Container fluid className="bg-primary text-white text-center py-5"style={{ backgroundImage: `url(${contact})`, backgroundSize: 'cover', borderRadius:'10px 10px 10px 10px'}}>
+      <Container fluid className="text-white text-center py-5"style={{ backgroundImage: `url(${contact})`, backgroundSize: 'cover', borderRadius:'10px 10px 10px 10px'}}>
         <h1 className='text-dark'>About Us</h1>
         <p className="lead text-dark fs-4">Learn more about our mission and vision.</p>
         <Button variant="light" href="#contact-form">Contact Us</Button>
